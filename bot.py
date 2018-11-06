@@ -26,7 +26,7 @@ def text_handler(message):
         
     answer = message.text
     
-    bot.send_message(message.chat.id)
+    bot.send_message(message.chat.id, answer)
 
 
 if __name__ == '__main__': 
