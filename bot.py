@@ -4,7 +4,9 @@ import config
 
 import telebot
 
+
 bot = telebot.TeleBot(config.token, threaded=False)
+
 
 @bot.message_handler(content_types="text")
 
@@ -14,22 +16,37 @@ def text_handler(message):
     
         answer = 'Здравствуйте, этот бот представляет Здоровое Черноземье'
         
+        bot.send_message(message.chat.id, answer)
+    
+
     elif(message.text=='/help'):
     
-        answer = '''На данный момент поддерживаются 5 команд,
-        /contacts Предоставляет информацию о наших контактах 
-        /links Полезные ссылки 
-        /hotline Горячая линия в телеграме с нашими служителям
-        /informations О нас
-        /legal Юридический уголок'''
+        hotline_button=telebot.types.InlineKeyboardButton(text='Горячая линия',url='')
         
-    else: 
+        informations_button=telebot.types.InlineKeyboardButton(text='О нас',url='')
         
-        answer = message.text
-    
+        contacts_button=telebot.types.InlineKeyboardButton(text='Контакты',url='')
         
-    bot.send_message(message.chat.id, answer)
-
+        links_button=telebot.types.InlineKeyboardButton(text='Полезные ссылки',url='')
+        
+        legal_button=telebot.types.InlineKeyboardButton(text='Юридический уголок',url='')
+        
+        
+        markup=telebot.types.InlineKeyboardMarkup()
+        
+        
+        markup.add(hotline_button)
+        
+        markup.add(informations_button)
+        
+        markup.add(contacts_button)
+        
+        markup.add(links_button)
+        
+        markup.add(legal_button)
+        
+        
+        bot.send_message(message.chat.id, reply_markup = markup)
 
 if __name__ == '__main__': 
     
