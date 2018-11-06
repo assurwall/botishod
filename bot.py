@@ -10,13 +10,11 @@ bot = telebot.TeleBot(config.token, threaded=False)
 
 def test_handler(message):
 
-    print(message.text())
-
     if(message.text()=='/start'):
     
         answer = 'Здравствуйте, этот бот представляет Церковь Христианская Миссия'
         
-    if(message.text()=='/help'):
+    elif(message.text()=='/help'):
     
         answer = '''На данный момент поддерживаются 5 команд,
             /contacts Предоставляет информацию о наших контактах
@@ -24,6 +22,9 @@ def test_handler(message):
             /hotline Горячая линия телеграме с нашими служителями
             /informations О нас
             /legal Юридический уголок'''
+    else:
+        
+        answer = message.text()
     
     bot.send_message(message.chat.id, answer)
 
