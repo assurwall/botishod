@@ -4,34 +4,24 @@ import config
 
 import telebot
 
-#from telebot import apihelper
-
 bot = telebot.TeleBot(config.token, threaded=False)
 
-#apihelper.proxy = {
-#    'http': 'socks5://138.197.58.55:1080',
-#    'https': 'socks5://138.197.58.55:1080'
-#    }
-
 @bot.message_handler(content_types="text")
+
+def test_handler(message):
+
+    if(message.text()=='/start'):
     
-def start_handler(message):
-
-    answer = 'Здравствуйте, этот бот представляет Церковь Христианская Миссия'
+        answer = 'Здравствуйте, этот бот представляет Церковь Христианская Миссия'
+        
+    if(message.text()=='/help'):
     
-    bot.send_message(message.chat.id, answer)
-
-
-@bot.message_handler(comands=['help'])
-
-def help_handler(message):
-    
-    answer = '''На данный момент поддерживаются 4 команды,
-             /contacts Предоставляет информацию о наших контактах
-             /links Полезные ссылки
-             /hotline Горячая линия телеграме с нашими служителями
-             /informations О нас
-             /legal Юридический уголок'''
+        answer = '''На данный момент поддерживаются 5 команд,
+            /contacts Предоставляет информацию о наших контактах
+            /links Полезные ссылки
+            /hotline Горячая линия телеграме с нашими служителями
+            /informations О нас
+            /legal Юридический уголок'''
     
     bot.send_message(message.chat.id, answer)
 
