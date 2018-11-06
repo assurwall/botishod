@@ -10,6 +10,8 @@ bot = telebot.TeleBot(config.token, threaded=False)
 
 def test_handler(message):
 
+    print(message.text())
+
     if(message.text()=='/start'):
     
         answer = 'Здравствуйте, этот бот представляет Церковь Христианская Миссия'
