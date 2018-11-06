@@ -2,4 +2,4 @@
 
 # Бот с именем PomothBot
 
-token = ''
+token = '531376255:AAGkYzkzW7qRzY_vzvhKRCjzB3sBlMSGH6I'
