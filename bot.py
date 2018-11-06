@@ -13,32 +13,27 @@ bot = telebot.TeleBot(config.token, threaded=False)
 #    'https': 'socks5://138.197.58.55:1080'
 #    }
 
-#@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['start'])
     
-#def start_handler(message):
+def start_handler(message):
 
-#    answer = 'Здравствуйте, этот бот представляет Церковь Христианская Миссия'
+    answer = 'Здравствуйте, этот бот представляет Церковь Христианская Миссия'
     
-#    bot.send_message(message.chat.id, answer)
+    bot.send_message(message.chat.id, answer)
 
 
-#@bot.message_handler(comands=['help'])
+@bot.message_handler(comands=['help'])
 
-#def help_handler(message):
+def help_handler(message):
     
-#    answer = '''На данный момент поддерживаются 4 команды,
-#             /contacts Предоставляет информацию о наших контактах
-#             /links Предоставляет ссылки на наши чаты и соцсети
-#             /hotline Горячая линия телеграме с нашими служителями
-#             /informations Полезная информация'''
+    answer = '''На данный момент поддерживаются 4 команды,
+             /contacts Предоставляет информацию о наших контактах
+             /links Полезные ссылки
+             /hotline Горячая линия телеграме с нашими служителями
+             /informations О нас
+             /legal Юридический уголок'''
     
-#    bot.send_message(message.chat.id, answer)
-
-@bot.message_handler(content_types=["text"])
-
-def repeat_all_messages(message):
-    
-    bot.send_message(message.chat.id, message.text)
+    bot.send_message(message.chat.id, answer)
 
 
 if __name__ == '__main__': 
