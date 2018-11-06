@@ -13,7 +13,7 @@ bot = telebot.TeleBot(config.token, threaded=False)
 #    'https': 'socks5://138.197.58.55:1080'
 #    }
 
-@bot.message_handler(commands=['start'])
+@bot.message_handler(content_types="text")
     
 def start_handler(message):
 
