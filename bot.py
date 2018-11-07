@@ -70,7 +70,7 @@ def inline_handler(inline_query):
     
 #        keyboard.add(chat_button)
         
-        keyboard.add(back_button)
+#        keyboard.add(back_button)
     
         bot.edit_message_text(
             
