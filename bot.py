@@ -4,6 +4,7 @@ import config
 
 import telebot
 
+from telebot import types
 
 bot = telebot.TeleBot(config.token, threaded=False)
 
@@ -21,18 +22,18 @@ def text_handler(message):
 
     elif(message.text=='/help'):
     
-        hotline_button=telebot.types.InlineKeyboardButton(text='Горячая линия',url='')
+        hotline_button=types.KeyboardButton(text='Горячая линия',url='')
         
-        informations_button=telebot.types.InlineKeyboardButton(text='О нас',url='')
+        informations_button=types.KeyboardButton(text='О нас',url='')
         
-        contacts_button=telebot.types.InlineKeyboardButton(text='Контакты',url='')
+        contacts_button=types.KeyboardButton(text='Контакты',url='')
         
-        links_button=telebot.types.InlineKeyboardButton(text='Полезные ссылки',url='')
+        links_button=types.KeyboardButton(text='Полезные ссылки',url='')
         
-        legal_button=telebot.types.InlineKeyboardButton(text='Юридический уголок',url='')
+        legal_button=types.KeyboardButton(text='Юридический уголок',url='')
         
         
-        markup=telebot.types.InlineKeyboardMarkup()
+        markup=types.ReplyKeyboardMarkup(resize_keyboard=True)
         
         
         markup.add(hotline_button)
@@ -46,7 +47,7 @@ def text_handler(message):
         markup.add(legal_button)
         
         
-        bot.send_message(message.chat.id, "Выберите интересующий пункт из меню.", reply_markup = markup)
+        bot.send_message(message.chat.id, 'Выберите интересующий пункт из меню.', reply_markup = markup)
         
         
     else:
