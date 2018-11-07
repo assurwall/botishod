@@ -64,11 +64,11 @@ def inline_handler(inline_query):
         
         keyboard=types.InlineKeyboardMarkup()
         
-        yaroslav_button=types.InlineKeyboardButton(text='Ярослав', url='https://телеграмм.онлайн/#/im?p=%40Yarik78')
+        yaroslav_button=types.InlineKeyboardButton(text='Ярослав', url='https://t.me/@Yarik78')
         
-        aleksey_button=types.InlineKeyboardButton(text='Алексей', url='https://телеграмм.онлайн/#/im?p=%40Zaosi')
+        aleksey_button=types.InlineKeyboardButton(text='Алексей', url='https://t.me/@Zaosi')
         
-        help_button=types.InlineKeyboardButton(text='Помощь', url='https://телеграмм.онлайн/#/im?p=%40Pomoth')
+        help_button=types.InlineKeyboardButton(text='Помощь', url='https://t.me/@Pomoth')
         
         chat_button=types.InlineKeyboardButton(text='Чат, если бан', url='https://t.me/joinchat/HUGe2kdgu8_3lkWy2qvrvA')
         
