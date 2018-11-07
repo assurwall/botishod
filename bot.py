@@ -8,7 +8,7 @@ from telebot import types
 
 bot = telebot.TeleBot(config.token, threaded=False)
 
-def main_menu(message):
+def main_menu():
     
     hotline_button=types.InlineKeyboardButton(text='Горячая линия', callback_data='hotline_query')
         
