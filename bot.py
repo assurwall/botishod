@@ -47,7 +47,12 @@ def text_handler(message):
         
         
         bot.send_message(message.chat.id, "Выберите интересующий пункт из меню.", reply_markup = markup)
-
+        
+        
+    else:
+    
+        bot.send_message(message.chat.id, "Я вас не понимаю.")
+        
 
 if __name__ == '__main__': 
     
