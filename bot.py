@@ -22,15 +22,15 @@ def text_handler(message):
 
     elif(message.text=='/help'):
     
-        hotline_button=types.InlineKeyboardButton(text='Горячая линия')
+        hotline_button=types.InlineKeyboardButton(text='Горячая линия', callback_data='hotline_query')
         
-        informations_button=types.InlineKeyboardButton(text='О нас')
+        informations_button=types.InlineKeyboardButton(text='О нас', callback_data='informations_query')
         
-        contacts_button=types.InlineKeyboardButton(text='Контакты')
+        contacts_button=types.InlineKeyboardButton(text='Контакты', callback_data='contacts_query')
         
-        links_button=types.InlineKeyboardButton(text='Полезные ссылки')
+        links_button=types.InlineKeyboardButton(text='Полезные ссылки', callback_data='links_query')
         
-        legal_button=types.InlineKeyboardButton(text='Юридический уголок')
+        legal_button=types.InlineKeyboardButton(text='Юридический уголок', callback_data='legal_query')
         
         
         keyboard=types.InlineKeyboardMarkup()
@@ -53,8 +53,17 @@ def text_handler(message):
         
     else:
     
-        bot.send_message(message.chat.id, "Я вас не понимаю.")
+        bot.send_message(message.chat.id, 'Я вас не понимаю.')
         
+@bot.callback_query_handler(func=lambda inline_query: True)
+
+def inline_handler(inline_query):
+
+    if(inline_query.data=='hotline_query'):
+    
+        bot.send_message(inline_query.chat.id, '''Вы можете позвонить по телефону
+                                             нашей горячей линии''')
+    
 
 if __name__ == '__main__': 
     
