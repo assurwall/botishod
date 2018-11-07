@@ -64,10 +64,22 @@ def inline_handler(inline_query):
         
         keyboard=types.InlineKeyboardMarkup()
         
-        chat_button=types.InlineKeyboardButton(text='Чат', url='https://t.me/joinchat/HUGe2kdgu8_3lkWy2qvrvA')
+        yaroslav_button=types.InlineKeyboardButton(text='Ярослав', url='@Yarik78')
+        
+        aleksey_button=types.InlineKeyboardButton(text='Алексей', url='@Zaosi')
+        
+        help_button=types.InlineKeyboardButton(text='Помощь', url='@Pomoth')
+        
+        chat_button=types.InlineKeyboardButton(text='Чат, если бан', url='https://t.me/joinchat/HUGe2kdgu8_3lkWy2qvrvA')
         
         back_button=types.InlineKeyboardButton(text='Назад', callback_data='main_menu_query')
     
+        keyboard.add(yaroslav_button)
+        
+        keyboard.add(aleksey_button)
+        
+        keyboard.add(help_button)
+        
         keyboard.add(chat_button)
         
         keyboard.add(back_button)
@@ -80,11 +92,7 @@ def inline_handler(inline_query):
     
                 text='Вы можете позвонить нам по бесплатному номеру '
                 '8-800-333-09-81, '
-                'Пишите нам: '
-                '@Yarik78 '
-                '@Zaosi '
-                '@Pomoth '
-                'Наш чат, если бан: ',
+                'Пишите нам: ',
                 
                 reply_markup=keyboard,
                                     
