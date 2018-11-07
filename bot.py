@@ -22,18 +22,18 @@ def text_handler(message):
 
     elif(message.text=='/help'):
     
-        hotline_button=types.KeyboardButton(text='Горячая линия')
+        hotline_button=types.InlineKeyboardButton(text='Горячая линия')
         
-        informations_button=types.KeyboardButton(text='О нас')
+        informations_button=types.InlineKeyboardButton(text='О нас')
         
-        contacts_button=types.KeyboardButton(text='Контакты')
+        contacts_button=types.InlineKeyboardButton(text='Контакты')
         
-        links_button=types.KeyboardButton(text='Полезные ссылки')
+        links_button=types.InlineKeyboardButton(text='Полезные ссылки')
         
-        legal_button=types.KeyboardButton(text='Юридический уголок')
+        legal_button=types.InlineKeyboardButton(text='Юридический уголок')
         
         
-        keyboard=types.ReplyKeyboardMarkup(resize_keyboard=True)
+        keyboard=types.InlineKeyboardMarkup()
         
         
         keyboard.add(hotline_button)
@@ -49,6 +49,7 @@ def text_handler(message):
         
         bot.send_message(message.chat.id, 'Выберите интересующий пункт из меню.', reply_markup = keyboard)
         
+
         
     else:
     
