@@ -86,7 +86,7 @@ def inline_handler(inline_query):
                 '@Pomoth'
                 'Наш чат, если бан:',
                 
-                reply_markup=keyboard,
+#                reply_markup=keyboard,
                                     
                 parse_mode='Markdown')
     
