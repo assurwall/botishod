@@ -66,7 +66,7 @@ def inline_handler(inline_query):
         
 #        chat_button=types.InlineKeyboardButton(text='Чат', url='https://t.me/joinchat/HUGe2kdgu8_3lkWy2qvrvA')
         
-        back_button=types.InlineKeyboardButton(text='Назад', callback_date='main_menu_query')
+        back_button=types.InlineKeyboardButton(text='Назад', callback_data='main_menu_query')
     
 #        keyboard.add(chat_button)
         
