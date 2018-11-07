@@ -61,8 +61,16 @@ def inline_handler(inline_query):
 
     if(inline_query.data=='hotline_query'):
     
-        bot.send_message(inline_query.chat.id, '''Вы можете позвонить по телефону
-                                             нашей горячей линии''')
+        bot.edit_message_text(
+            
+                chat_id=inline_query.message.chat.id,
+                
+                message_id=inline_query.message.message_id,
+    
+                text='''Вы можете позвонить по телефону
+                                    нашей горячей линии''',
+                                    
+                parse_mode='Markdown')
     
 
 if __name__ == '__main__': 
