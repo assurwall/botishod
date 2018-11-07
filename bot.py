@@ -9,30 +9,41 @@ from telebot import types
 bot = telebot.TeleBot(config.token, threaded=False)
 
 def main_menu():
+
+#    hotline_button=types.InlineKeyboardButton(text='Горячая линия', callback_data='hotline_query')
+        
+#    informations_button=types.InlineKeyboardButton(text='О нас', callback_data='informations_query')
+        
+#    contacts_button=types.InlineKeyboardButton(text='Контакты', callback_data='contacts_query')
+        
+#    links_button=types.InlineKeyboardButton(text='Полезные ссылки', callback_data='links_query')
+        
+#    legal_button=types.InlineKeyboardButton(text='Юридический уголок', callback_data='legal_query')
+        
+    buttons = [
+                types.InlineKeyboardButton(text='Горячая линия', callback_data='hotline_query'),
+                types.InlineKeyboardButton(text='О нас', callback_data='informations_query'),
+                types.InlineKeyboardButton(text='Контакты', callback_data='contacts_query'),
+                types.InlineKeyboardButton(text='Полезные ссылки', callback_data='links_query'),            
+                types.InlineKeyboardButton(text='Юридический уголок', callback_data='legal_query')
+                ]
     
-    hotline_button=types.InlineKeyboardButton(text='Горячая линия', callback_data='hotline_query')
-        
-    informations_button=types.InlineKeyboardButton(text='О нас', callback_data='informations_query')
-        
-    contacts_button=types.InlineKeyboardButton(text='Контакты', callback_data='contacts_query')
-        
-    links_button=types.InlineKeyboardButton(text='Полезные ссылки', callback_data='links_query')
-        
-    legal_button=types.InlineKeyboardButton(text='Юридический уголок', callback_data='legal_query')
-        
-        
     keyboard=types.InlineKeyboardMarkup()
         
         
-    keyboard.add(hotline_button)
+#    keyboard.add(hotline_button)
         
-    keyboard.add(informations_button)
+#    keyboard.add(informations_button)
         
-    keyboard.add(contacts_button)
+#    keyboard.add(contacts_button)
         
-    keyboard.add(links_button)
+#    keyboard.add(links_button)
         
-    keyboard.add(legal_button)
+#    keyboard.add(legal_button)
+
+    for button in buttons:
+    
+        keyboard.add(button)
     
     return keyboard
 
