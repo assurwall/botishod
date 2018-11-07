@@ -22,32 +22,32 @@ def text_handler(message):
 
     elif(message.text=='/help'):
     
-        hotline_button=types.KeyboardButton(text='Горячая линия',url='')
+        hotline_button=types.KeyboardButton(text='Горячая линия')
         
-        informations_button=types.KeyboardButton(text='О нас',url='')
+        informations_button=types.KeyboardButton(text='О нас')
         
-        contacts_button=types.KeyboardButton(text='Контакты',url='')
+        contacts_button=types.KeyboardButton(text='Контакты')
         
-        links_button=types.KeyboardButton(text='Полезные ссылки',url='')
+        links_button=types.KeyboardButton(text='Полезные ссылки')
         
-        legal_button=types.KeyboardButton(text='Юридический уголок',url='')
-        
-        
-        markup=types.ReplyKeyboardMarkup(resize_keyboard=True)
+        legal_button=types.KeyboardButton(text='Юридический уголок')
         
         
-        markup.add(hotline_button)
-        
-        markup.add(informations_button)
-        
-        markup.add(contacts_button)
-        
-        markup.add(links_button)
-        
-        markup.add(legal_button)
+        keyboard=types.ReplyKeyboardMarkup(resize_keyboard=True)
         
         
-        bot.send_message(message.chat.id, 'Выберите интересующий пункт из меню.', reply_markup = markup)
+        keyboard.add(hotline_button)
+        
+        keyboard.add(informations_button)
+        
+        keyboard.add(contacts_button)
+        
+        keyboard.add(links_button)
+        
+        keyboard.add(legal_button)
+        
+        
+        bot.send_message(message.chat.id, 'Выберите интересующий пункт из меню.', reply_markup = keyboard)
         
         
     else:
