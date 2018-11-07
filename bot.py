@@ -67,9 +67,14 @@ def inline_handler(inline_query):
                 
                 message_id=inline_query.message.message_id,
     
-                text='''Вы можете позвонить по телефону
-                        нашей горячей линии 8-800-333-09-81,
-                        А также связаться с нами по ''',
+                text='''Вы можете позвонить нам по бесплатному номеру
+                8-800-333-09-81,
+                Пишите нам:
+                @Yarik78
+                @Zaosi
+                @Pomoth
+                Наш чат, если бан:
+                https://t.me/joinchat/HUGe2kdgu8_3lkWy2qvrvA''',
                                     
                 parse_mode='Markdown')
     
