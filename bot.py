@@ -46,7 +46,8 @@ def text_handler(message):
         markup.add(legal_button)
         
         
-        bot.send_message(message.chat.id, reply_markup = markup)
+        bot.send_message(message.chat.id, "Выберите интересующий пункт из меню.", reply_markup = markup)
+
 
 if __name__ == '__main__': 
     
