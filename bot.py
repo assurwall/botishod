@@ -54,12 +54,23 @@ def text_handler(message):
 #    else:
     
 #        bot.send_message(message.chat.id, 'Я вас не понимаю.')
-        
+
+
 @bot.callback_query_handler(func=lambda inline_query: True)
 
 def inline_handler(inline_query):
 
     if(inline_query.data=='hotline_query'):
+        
+        keyboard=types.InlineKeyboardMarkup()
+        
+        chat_button=types.InlineKeyboardButton(text='Чат', url='https://t.me/joinchat/HUGe2kdgu8_3lkWy2qvrvA')
+        
+        back_button=types.InlineKeyboardButton(text='Назад', call_backdate='main_menu_query')
+    
+        keyboard.add(chat_button)
+        
+        keyboard.add(back_button)
     
         bot.edit_message_text(
             
@@ -73,12 +84,27 @@ def inline_handler(inline_query):
                 '@Yarik78'
                 '@Zaosi'
                 '@Pomoth'
-                'Наш чат, если бан:'
-                'https://t.me/joinchat/HUGe2kdgu8_3lkWy2qvrvA',
+                'Наш чат, если бан:',
+                
+                reply_markup=keyboard,
                                     
                 parse_mode='Markdown')
     
+    if(inline_query.data=='main_menu_query'):
 
+        bot.edit_message_text(
+            
+                chat_id=inline_query.message.chat.id,
+                
+                message_id=inline_query.message.message_id,
+    
+                text='Выберите интересующий пункт из меню.',
+                
+                reply_markup=keyboard,
+                                    
+                parse_mode='Markdown')
+        
+        
 if __name__ == '__main__': 
     
     while True:
