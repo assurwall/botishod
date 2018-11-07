@@ -73,8 +73,8 @@ def inline_handler(inline_query):
                 '@Yarik78'
                 '@Zaosi'
                 '@Pomoth'
-                'Наш чат, если бан:',
-#                'https://t.me/joinchat/HUGe2kdgu8_3lkWy2qvrvA',
+                'Наш чат, если бан:'
+                'https://t.me/joinchat/HUGe2kdgu8_3lkWy2qvrvA',
                                     
                 parse_mode='Markdown')
     
