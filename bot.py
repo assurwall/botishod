@@ -8,7 +8,7 @@ from telebot import types
 
 bot = telebot.TeleBot(config.token, threaded=False)
 
-def send_main_menu(message):
+def main_menu(message):
     
     hotline_button=types.InlineKeyboardButton(text='Горячая линия', callback_data='hotline_query')
         
@@ -33,9 +33,8 @@ def send_main_menu(message):
     keyboard.add(links_button)
         
     keyboard.add(legal_button)
-        
-        
-    bot.send_message(message.chat.id, 'Выберите интересующий пункт из меню.', reply_markup = keyboard)
+    
+    return keyboard
 
 
 @bot.message_handler(content_types="text")
@@ -50,7 +49,7 @@ def text_handler(message):
     
     elif(message.text=='/help'):
         
-        send_main_menu(message)
+        bot.send_message(message.chat.id, 'Выберите интересующий пункт из меню.', reply_markup = main_menu())
         
 #    else:
     
