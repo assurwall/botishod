@@ -79,12 +79,12 @@ def inline_handler(inline_query):
                 message_id=inline_query.message.message_id,
     
                 text='Вы можете позвонить нам по бесплатному номеру '
-                '8-800-333-09-81,'
-                'Пишите нам:'
-                '@Yarik78'
-                '@Zaosi'
-                '@Pomoth'
-                'Наш чат, если бан:',
+                ' 8-800-333-09-81,'
+                ' Пишите нам:'
+                ' @Yarik78'
+                ' @Zaosi'
+                ' @Pomoth'
+                ' Наш чат, если бан:',
                 
 #                reply_markup=keyboard,
                                     
