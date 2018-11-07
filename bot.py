@@ -64,7 +64,7 @@ def inline_handler(inline_query):
         
         keyboard=types.InlineKeyboardMarkup()
         
-        yaroslav_button=types.InlineKeyboardButton(text='Ярослав', url='@Yarik78')
+#        yaroslav_button=types.InlineKeyboardButton(text='Ярослав', url='@Yarik78')
         
 #        aleksey_button=types.InlineKeyboardButton(text='Алексей', url='@Zaosi')
         
@@ -74,7 +74,7 @@ def inline_handler(inline_query):
         
         back_button=types.InlineKeyboardButton(text='Назад', callback_data='main_menu_query')
     
-        keyboard.add(yaroslav_button)
+#        keyboard.add(yaroslav_button)
         
 #        keyboard.add(aleksey_button)
         
