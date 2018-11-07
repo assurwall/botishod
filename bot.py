@@ -100,7 +100,7 @@ def inline_handler(inline_query):
     
                 text='Выберите интересующий пункт из меню.',
                 
-                reply_markup=keyboard,
+                reply_markup=main_menu(),
                                     
                 parse_mode='Markdown')
         
