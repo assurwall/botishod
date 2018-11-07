@@ -71,8 +71,8 @@ def inline_handler(inline_query):
                 
                 message_id=inline_query.message.message_id,
     
-                text='Вы можете позвонить нам по бесплатному номеру '
-                '8-800-333-09-81, '
+                text='Вы можете позвонить нам по бесплатному номеру \n'
+                '8-800-333-09-81, \n'
                 'Пишите нам: @Yarik78, @Zaosi',
                 
                 reply_markup=keyboard,
