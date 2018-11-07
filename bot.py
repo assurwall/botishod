@@ -10,16 +10,6 @@ bot = telebot.TeleBot(config.token, threaded=False)
 
 def main_menu():
 
-#    hotline_button=types.InlineKeyboardButton(text='Горячая линия', callback_data='hotline_query')
-        
-#    informations_button=types.InlineKeyboardButton(text='О нас', callback_data='informations_query')
-        
-#    contacts_button=types.InlineKeyboardButton(text='Контакты', callback_data='contacts_query')
-        
-#    links_button=types.InlineKeyboardButton(text='Полезные ссылки', callback_data='links_query')
-        
-#    legal_button=types.InlineKeyboardButton(text='Юридический уголок', callback_data='legal_query')
-        
     buttons = [
                 types.InlineKeyboardButton(text='Горячая линия', callback_data='hotline_query'),
                 types.InlineKeyboardButton(text='О нас', callback_data='informations_query'),
@@ -27,24 +17,14 @@ def main_menu():
                 types.InlineKeyboardButton(text='Полезные ссылки', callback_data='links_query'),            
                 types.InlineKeyboardButton(text='Юридический уголок', callback_data='legal_query')
                 ]
-    
+
     keyboard=types.InlineKeyboardMarkup()
-        
-        
-#    keyboard.add(hotline_button)
-        
-#    keyboard.add(informations_button)
-        
-#    keyboard.add(contacts_button)
-        
-#    keyboard.add(links_button)
-        
-#    keyboard.add(legal_button)
+
 
     for button in buttons:
-    
+
         keyboard.add(button)
-    
+
     return keyboard
 
 
@@ -53,11 +33,11 @@ def main_menu():
 def text_handler(message):
 
     if(message.text=='/start'):
-    
+
         answer = 'Здравствуйте, этот бот представляет Здоровое Черноземье'
-        
+
         bot.send_message(message.chat.id, answer)
-    
+
     elif(message.text=='/help'):
         
         bot.send_message(message.chat.id, 'Выберите интересующий пункт из меню.', reply_markup = main_menu())
@@ -75,17 +55,15 @@ def inline_handler(inline_query):
         
         keyboard=types.InlineKeyboardMarkup()
         
-        help_button=types.InlineKeyboardButton(text='Помощь', url='https://t.me/Pomoth')
+        buttons = [
+            types.InlineKeyboardButton(text='Помощь', url='https://t.me/Pomoth'),
+            types.InlineKeyboardButton(text='Чат, если бан', url='https://t.me/joinchat/HUGe2kdgu8_3lkWy2qvrvA'),
+            types.InlineKeyboardButton(text='Назад', callback_data='main_menu_query')
+            ]
         
-        chat_button=types.InlineKeyboardButton(text='Чат, если бан', url='https://t.me/joinchat/HUGe2kdgu8_3lkWy2qvrvA')
-        
-        back_button=types.InlineKeyboardButton(text='Назад', callback_data='main_menu_query')
-        
-        keyboard.add(help_button)
-        
-        keyboard.add(chat_button)
-        
-        keyboard.add(back_button)
+        for button in buttons:
+            
+            keyboard.add(button)
     
         bot.edit_message_text(
             
