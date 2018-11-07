@@ -62,15 +62,15 @@ def inline_handler(inline_query):
 
     if(inline_query.data=='hotline_query'):
         
-        keyboard=types.InlineKeyboardMarkup()
+#        keyboard=types.InlineKeyboardMarkup()
         
-        chat_button=types.InlineKeyboardButton(text='Чат', url='https://t.me/joinchat/HUGe2kdgu8_3lkWy2qvrvA')
+#        chat_button=types.InlineKeyboardButton(text='Чат', url='https://t.me/joinchat/HUGe2kdgu8_3lkWy2qvrvA')
         
-        back_button=types.InlineKeyboardButton(text='Назад', call_backdate='main_menu_query')
+#        back_button=types.InlineKeyboardButton(text='Назад', call_backdate='main_menu_query')
     
-        keyboard.add(chat_button)
+#        keyboard.add(chat_button)
         
-        keyboard.add(back_button)
+#        keyboard.add(back_button)
     
         bot.edit_message_text(
             
