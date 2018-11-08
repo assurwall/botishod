@@ -4,6 +4,8 @@ import config
 
 import telebot
 
+import time
+
 from telebot import types
 
 bot = telebot.TeleBot(config.token, threaded=False)
@@ -101,8 +103,12 @@ if __name__ == '__main__':
         
         try:
             
-            bot.polling(none_stop=True) 
+            bot.polling(none_stop=True)
+            
+            time.sleep(3)
             
         except Exception as e: 
             
             print(e)
+            
+            time.sleep(10)
