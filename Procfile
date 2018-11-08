@@ -1,1 +1,1 @@
-web: python bot.py thin start -p $PORT
+web: python bot.py -p $PORT
