@@ -6,6 +6,8 @@ import telebot
 
 import time
 
+import logging
+
 from telebot import types
 
 bot = telebot.TeleBot(config.token, threaded=False)
@@ -109,6 +111,6 @@ if __name__ == '__main__':
             
         except Exception as e: 
             
-            print(e)
+            logging.exception(e)
             
             time.sleep(10)
