@@ -107,10 +107,10 @@ if __name__ == '__main__':
             
             bot.polling(none_stop=True)
             
-            time.sleep(3)
+#            time.sleep(3)
             
         except Exception as e: 
             
             logging.exception(e)
             
-            time.sleep(10)
+#            time.sleep(10)
