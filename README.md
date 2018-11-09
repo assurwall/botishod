@@ -1,2 +1,0 @@
-"# botishod" 
-"# HabrParser_Bot" 
