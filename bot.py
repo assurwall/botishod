@@ -4,7 +4,7 @@ import config
 
 import telebot
 
-import time
+#import time
 
 from telebot import types
 
@@ -45,9 +45,9 @@ def text_handler(message):
         
         bot.send_message(message.chat.id, 'Выберите интересующий пункт из меню.', reply_markup = main_menu())
         
-#    else:
+    else:
     
-#        bot.send_message(message.chat.id, 'Я вас не понимаю.')
+        bot.send_message(message.chat.id, 'Я вас не понимаю.')
 
 
 @bot.callback_query_handler(func=lambda inline_query: True)
@@ -105,10 +105,10 @@ if __name__ == '__main__':
             
             bot.polling(none_stop=True)
             
-            time.sleep(3)
+#            time.sleep(3)
             
         except Exception as e: 
             
             print(e)
-            
-            time.sleep(10)
+           
+#           time.sleep(10)
