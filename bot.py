@@ -4,11 +4,11 @@ import config
 
 import telebot
 
-#import time
+import time
 
 from telebot import types
 
-bot = telebot.TeleBot(config.token, threaded=False)
+bot = telebot.TeleBot(config.token)
 
 
 def main_menu():
@@ -105,10 +105,10 @@ if __name__ == '__main__':
             
             bot.polling(none_stop=True)
             
-#            time.sleep(3)
+            time.sleep(3)
             
         except Exception as e: 
             
             print(e)
            
-#           time.sleep(10)
+            time.sleep(10)
