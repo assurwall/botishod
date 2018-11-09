@@ -6,4 +6,4 @@
 
 # Бот с именeм @test1819_bot
 
-token = '775475818:AAGN7d2KFdFOSgA-ZNydu8-9W9BiSXSs3lw'
+token = '775475818:AAF4aqNyw4r_izXmu_H9_bcg2fb-dE7JO9U'
